@@ -9,18 +9,17 @@ backgroundImage: "/background.jpg",
 
   greeting: {
     username: "Tuyet Minh Vu",
-    title: "Hi there! I'm Tuyet Minh Vu ౨ৎ",
-    subTitle: emoji(
-      `A Computer Science undergraduate at the University of Utah
-      
-  , originally from Vietnam.
-  
-  Passionate about building meaningful tech and turning ideas into real-world solutions!
-  My hobby is hiking, photography and traveling`
-    ),
-    resumeLink: "/resume.pdf", 
-    profilePicture: "/profilepic.JPG",
-    display: true
+  title: "Hello! I'm Tuyet Minh Vu",
+  subTitle: emoji(
+    `I am a Computer Science undergraduate at the University of Utah, originally from Vietnam.
+
+Passionate about building meaningful technology and transforming ideas into real-world solutions. 
+
+In my free time, I enjoy hiking, photography, and traveling.`
+  ),
+  resumeLink: "/resume.pdf",
+  profilePicture: "/profilepic.JPG",
+  display: true
   }
 ,
 
@@ -81,9 +80,8 @@ backgroundImage: "/background.jpg",
 
   contactInfo: {
     display: true,
-    title: emoji("Contact ☎️"),
-    subtitle: "Feel free to reach out—my inbox is open.",
+    title: emoji("Contact"),
+    subtitle: "Feel free to reach out!",
     email: "tmvu511@gmail.com",
-    phone: "801-949-4104"
   }
 };

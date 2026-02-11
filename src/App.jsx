@@ -60,16 +60,6 @@ function Header() {
             <a href={g.resumeLink} target="_blank" rel="noreferrer" style={styles.btn}>
               Resume
             </a>
-            {s.linkedin && (
-              <a href={s.linkedin} target="_blank" rel="noreferrer" style={styles.btn}>
-                LinkedIn
-              </a>
-            )}
-            {s.github && (
-              <a href={s.github} target="_blank" rel="noreferrer" style={styles.btn}>
-                GitHub
-              </a>
-            )}
           </div>
 
           <div style={styles.miniLinks}>
