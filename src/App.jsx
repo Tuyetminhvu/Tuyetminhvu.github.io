@@ -4,6 +4,10 @@ import { createPortal } from "react-dom";
 import { portfolio } from "./portfolio";
 
 export default function App() {
+  const base = import.meta.env.BASE_URL || "/";
+  const toUrl = (path) =>
+    path && !path.startsWith("http") ? `${base}${path.replace(/^\//, "")}` : path;
+
   const g = portfolio.greeting;
   const s = portfolio.socialMediaLinks;
   const skills = portfolio.skillsSection;
@@ -46,7 +50,7 @@ export default function App() {
   if (route === "#things-i-love") {
     return (
       <div className="page">
-        <FlowerBloom />
+        <FlowerBloom toUrl={toUrl} />
         <header className="site-header">
           <nav className="nav">
             <a className="brand" href="#top">TMV</a>
@@ -68,16 +72,16 @@ export default function App() {
             {things.items.map((item) => {
               const isOpen = !!openLoves[item.title];
               return (
-              <article key={item.title} className="love-card">
-                <div className="love-media">
-                  <button
-                    className="project-image-button"
-                    type="button"
-                    onClick={() => setLightboxSrc(item.image)}
-                    aria-label={`Open ${item.title} image`}
-                  >
-                    <img src={item.image} alt={item.title} />
-                  </button>
+                <article key={item.title} className="love-card">
+                  <div className="love-media">
+                    <button
+                      className="project-image-button"
+                      type="button"
+                      onClick={() => setLightboxSrc(toUrl(item.image))}
+                      aria-label={`Open ${item.title} image`}
+                    >
+                      <img src={toUrl(item.image)} alt={item.title} />
+                    </button>
                   <button
                     className="love-cta"
                     type="button"
@@ -102,10 +106,10 @@ export default function App() {
                           className="project-image-button"
                           type="button"
                           key={i}
-                          onClick={() => setLightboxSrc(img)}
+                          onClick={() => setLightboxSrc(toUrl(img))}
                           aria-label={`Open ${item.title} gallery image ${i + 1}`}
                         >
-                          <img src={img} alt={`${item.title} ${i + 1}`} />
+                          <img src={toUrl(img)} alt={`${item.title} ${i + 1}`} />
                         </button>
                       ))}
                     </div>
@@ -145,7 +149,7 @@ export default function App() {
 
   return (
     <div className="page">
-      <FlowerBloom />
+      <FlowerBloom toUrl={toUrl} />
       <header className="site-header">
         <nav className="nav">
           <a className="brand" href="#top">TMV</a>
@@ -176,7 +180,7 @@ export default function App() {
             <div className="hero-actions">
               <a
                 className="btn btn-primary"
-                href={g.resumeLink}
+                href={toUrl(g.resumeLink)}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -195,7 +199,7 @@ export default function App() {
             {g.profilePicture && (
               <img
                 className="hero-image"
-                src={g.profilePicture}
+                src={toUrl(g.profilePicture)}
                 alt={g.username}
               />
             )}
@@ -250,11 +254,11 @@ export default function App() {
                     <button
                       className="project-image-button"
                       type="button"
-                      onClick={() => setLightboxSrc(p.thumbnail)}
+                      onClick={() => setLightboxSrc(toUrl(p.thumbnail))}
                       aria-label={`Open ${p.title} image`}
                     >
                       <img
-                        src={p.thumbnail}
+                        src={toUrl(p.thumbnail)}
                         alt={p.title}
                         className={p.thumbnail.includes("snake1") ? "project-zoomout" : ""}
                       />
@@ -289,21 +293,21 @@ export default function App() {
                     <div className="project-more">
                       <p>{p.details}</p>
                       <div className="project-gallery">
-                        {p.gallery.map((img, i) => (
-                          <button
-                            className="project-image-button"
-                            type="button"
-                            key={i}
-                            onClick={() => setLightboxSrc(img)}
-                            aria-label={`Open ${p.title} gallery image ${i + 1}`}
-                          >
-                            <img
-                              src={img}
-                              alt={`${p.title} ${i + 1}`}
-                            />
-                          </button>
-                        ))}
-                      </div>
+                      {p.gallery.map((img, i) => (
+                        <button
+                          className="project-image-button"
+                          type="button"
+                          key={i}
+                          onClick={() => setLightboxSrc(toUrl(img))}
+                          aria-label={`Open ${p.title} gallery image ${i + 1}`}
+                        >
+                          <img
+                            src={toUrl(img)}
+                            alt={`${p.title} ${i + 1}`}
+                          />
+                        </button>
+                      ))}
+                    </div>
                     </div>
                   )}
                 </article>
@@ -393,7 +397,7 @@ export default function App() {
   );
 }
 
-function FlowerBloom() {
+function FlowerBloom({ toUrl }) {
   const blooms = [
     { x: "-240px", y: "-40px", size: 200, img: "flower3.png", delay: "0s", opacity: 0.95 },
     { x: "-180px", y: "120px", size: 160, img: "flower4.png", delay: "0.6s", opacity: 0.9 },
@@ -461,7 +465,7 @@ function FlowerBloom() {
             "--x": b.x,
             "--y": b.y,
             "--size": `${b.size}px`,
-            "--img": `url(/assets/flower/${b.img})`,
+            "--img": `url(${toUrl(`assets/flower/${b.img}`)})`,
             "--delay": b.delay,
             "--opacity": b.opacity,
           }}
