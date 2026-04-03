@@ -27,6 +27,7 @@ export default function App() {
   const [openProjects, setOpenProjects] = useState({});
   const [openLoves, setOpenLoves] = useState({});
   const [lightboxSrc, setLightboxSrc] = useState(null);
+  const [showGreeting, setShowGreeting] = useState(true);
   const [route, setRoute] = useState(
     typeof window !== "undefined" ? window.location.hash : ""
   );
@@ -54,6 +55,12 @@ export default function App() {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [lightboxSrc]);
+
+  useEffect(() => {
+    if (!showGreeting) return;
+    const timer = setTimeout(() => setShowGreeting(false), 3500);
+    return () => clearTimeout(timer);
+  }, [showGreeting]);
 
   if (route === "#things-i-love") {
     return (
@@ -147,6 +154,27 @@ export default function App() {
                   Close
                 </button>
                 <img src={lightboxSrc} alt="Project full view" />
+              </div>
+            </div>,
+            document.body
+          )}
+        {showGreeting &&
+          typeof document !== "undefined" &&
+          createPortal(
+            <div className="greeting-overlay" onClick={() => setShowGreeting(false)}>
+              <div
+                className="greeting-card"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Greeting"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button className="greeting-close" onClick={() => setShowGreeting(false)}>
+                  Close
+                </button>
+                <div className="greeting-emoji">₊✩‧₊˚౨ৎ˚₊✩‧₊</div>
+                <h2>Hi there!</h2>
+                <p>Welcome to my portfolio. I’m so happy you’re here.</p>
               </div>
             </div>,
             document.body
@@ -397,6 +425,28 @@ export default function App() {
                 Close
               </button>
               <img src={lightboxSrc} alt="Project full view" />
+            </div>
+          </div>,
+          document.body
+        )}
+      {showGreeting &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div className="greeting-overlay" onClick={() => setShowGreeting(false)}>
+            <div
+              className="greeting-card"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Greeting"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className="greeting-close" onClick={() => setShowGreeting(false)}>
+                Close
+              </button>
+              <div className="greeting-emoji">👋</div>
+              <h2>Hi there!</h2>
+              <p> Welcome to my portfolio! I’m really glad you’re here. 
+                   Feel free to explore and have a great day!</p>
             </div>
           </div>,
           document.body

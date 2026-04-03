@@ -555,6 +555,69 @@
   cursor: pointer;
 }
 
+.greeting-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 248, 245, 0.88);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  z-index: 10000;
+  padding: 24px;
+}
+
+.greeting-card {
+  background: white;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  padding: 24px 26px 28px;
+  max-width: 420px;
+  text-align: center;
+  display: grid;
+  gap: 10px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  animation: greeting-pop 0.4s ease;
+}
+
+.greeting-emoji {
+  font-size: 40px;
+}
+
+.greeting-card h2 {
+  margin: 0;
+  font-family: "Gloria Hallelujah", "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #7c6f6d;
+}
+
+.greeting-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.greeting-close {
+  justify-self: end;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: #f2e7e5;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@keyframes greeting-pop {
+  from {
+    transform: translateY(8px) scale(0.97);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
