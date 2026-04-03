@@ -163,7 +163,7 @@ details:
         title: "Favorite Places",
         note: "Sugar House Park, Coffee Garden, and Chinatown.",
         details:
-          "I love strolling Sugar House Park, relaxing in coffee gardens, and exploring Chinatown.",
+          "I love strolling Sugar House Park, relaxing at Coffee Gardens, and exploring Chinatown.",
         image: "/assets/love/place1.jpg",
         gallery: [
           "/assets/love/place1.2.jpg",
@@ -171,6 +171,7 @@ details:
           "/assets/love/place2.1.jpg"
         ]
       },
+      
       {
         title: "Hidden Talent",
         note: "I can make my eyes look both sides :D",
