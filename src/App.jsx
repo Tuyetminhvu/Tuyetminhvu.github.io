@@ -5,8 +5,16 @@ import { portfolio } from "./portfolio";
 
 export default function App() {
   const base = import.meta.env.BASE_URL || "/";
-  const toUrl = (path) =>
-    path && !path.startsWith("http") ? `${base}${path.replace(/^\//, "")}` : path;
+  const toUrl = (path) => {
+    if (!path) return path;
+    if (/^https?:\/\//i.test(path)) return path;
+    const clean = path.replace(/^\//, "");
+    try {
+      return new URL(clean, window.location.origin + base).toString();
+    } catch {
+      return `${base}${clean}`;
+    }
+  };
 
   const g = portfolio.greeting;
   const s = portfolio.socialMediaLinks;
