@@ -38,7 +38,7 @@ export const portfolio = {
             },
             {
                 label: "Tools & Technologies",
-                items: ["Git/GitHub", "GitLab", "Unity", "SQL", "Figma", "TCP/IP Networking"]
+                items: ["Git/GitHub", "GitLab", "Unity", "SQL", "Figma"]
             }
         ],
         display: true
@@ -63,7 +63,7 @@ export const portfolio = {
                 company: "Therapeutic Games and Apps Lab — University of Utah",
                 date: "May 2026 – Present",
                 desc:
-                    "Building software for Color Me Healthy, a Unity/C# pediatric health game used clinically to help children ages 5–12 self-report symptoms."
+                    "Building software for Color Me Healthy, a Unity/C# pediatric health game used clinically to help children ages 5–10 self-report symptoms."
             },
             {
                 role: "Officer",
@@ -104,8 +104,8 @@ export const portfolio = {
                     "Engineered live physics using Box2D forces to simulate pouring, mixing, and whisking with distinct particle effects for dry and liquid ingredients. Designed a custom cursor interaction system with timer-based animations for tactile feedback.",
                 tags: ["C++", "Qt", "Box2D"],
                 link: "",
-                thumbnail: "",
-                gallery: []
+                thumbnail: "/assets/projects/cooking1.png",
+                gallery: ["/assets/projects/cooking2.png", "/assets/projects/cooking3.png", "/assets/projects/cooking4.png"]
             },
             {
                 title: "Real-Time Multiplayer Snake",
