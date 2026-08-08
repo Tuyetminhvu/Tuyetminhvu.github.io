@@ -11,7 +11,7 @@ export const portfolio = {
         username: "Tuyet Minh Vu",
         title: "Hello! I'm Tuyet Minh Vu",
         subTitle: emoji(
-            `Computer Science undergraduate at the University of Utah, originally from Huế, Vietnam.\n\nI build software that's useful and meaningful — from multiplayer games to healthcare tools for kids.\n\nOutside of coding, I enjoy hiking, photography, and traveling.`
+            `Computer Science undergraduate at the University of Utah, originally from Huế, Vietnam.\n\nOutside of coding, I enjoy hiking, photography, and traveling.`
         ),
         resumeLink: "/Resume.pdf",
         profilePicture: "/profilepic.JPG",
@@ -58,6 +58,12 @@ export const portfolio = {
     workExperiences: {
         display: true,
         experience: [
+            {
+                role: "Intern",
+                company: "Utah Department of Technology Services (DTS) - State of Utah",
+                date: "August 2026 - Present",
+                desc: " Building pratical experience in professional software development, teamwork  and technology solutions that suport state government services."
+            },
             {
                 role: "Undergraduate Software Developer / Research Assistant",
                 company: "Therapeutic Games and Apps Lab — University of Utah",
