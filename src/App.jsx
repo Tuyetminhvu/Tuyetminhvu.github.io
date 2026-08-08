@@ -68,7 +68,6 @@ export default function App() {
         <FlowerBloom toUrl={toUrl} />
         <header className="site-header">
           <nav className="nav">
-            <a className="brand" href="#top">TMV</a>
             <div className="nav-links">
               <a href="#top">HOME</a>
               <a href="#work">WORK</a>

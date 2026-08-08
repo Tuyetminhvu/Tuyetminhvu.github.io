@@ -13,7 +13,7 @@ export const portfolio = {
         subTitle: emoji(
             `Computer Science undergraduate at the University of Utah, originally from Huế, Vietnam.\n\nI build software that's useful and meaningful — from multiplayer games to healthcare tools for kids.\n\nOutside of coding, I enjoy hiking, photography, and traveling.`
         ),
-        resumeLink: "/resume.pdf",
+        resumeLink: "/Resume.pdf",
         profilePicture: "/profilepic.JPG",
         display: true
     },
@@ -61,7 +61,7 @@ export const portfolio = {
             {
                 role: "Undergraduate Software Developer / Research Assistant",
                 company: "Therapeutic Games and Apps Lab — University of Utah",
-                date: "May 2026 – Present",
+                date: "May 2026 – July 2026",
                 desc:
                     "Building software for Color Me Healthy, a Unity/C# pediatric health game used clinically to help children ages 5–10 self-report symptoms."
             },
