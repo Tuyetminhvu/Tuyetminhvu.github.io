@@ -63,7 +63,7 @@ export const portfolio = {
                 company: "Therapeutic Games and Apps Lab — University of Utah",
                 date: "May 2026 – July 2026",
                 desc:
-                    "Building software for Color Me Healthy, a Unity/C# pediatric health game used clinically to help children ages 5–10 self-report symptoms."
+                    "Building software for Color Me Healthy, a Unity/C# pediatric health game used clinically to help children ages 6-12g self-report symptoms."
             },
             {
                 role: "Officer",
